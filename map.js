@@ -5,9 +5,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZGVld291YWlzIiwiYSI6ImNqbmV0MHJzbTEzZHEzcXBsN
 
 let map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10',
-    center: [-73.96024, 40.80877],
-    zoom: 12
+    style: 'mapbox://styles/mapbox/satellite-v9',
+    center: [4.421521, 51.217187 ],
+    zoom: 13
 })
 
 let navigation = new mapboxgl.NavigationControl({
@@ -51,29 +51,35 @@ geolocate.on('geolocate', function(event) {
 
 })
 
-let marker = new mapboxgl.Marker()
-marker.setLngLat([-73.96007,40.80871])
-marker.addTo(map)
-
-let popup = new mapboxgl.Popup()
-popup.setHTML('This is the Center for Spatial Research<br /><img src="https://i.imgur.com/xb8ALxl.jpg" />')
-marker.setPopup(popup)
-
 let data = [
     {
-        location: [-73.96191,40.80762],
-        content: 'I like to eat my lunch here'
+        location: [4.403070, 51.221219 ],
+        content: ' "I still remember the uncertainty of my footsteps as I walked all round the inner city, down Jeruzalemstraat, Nachtegaalstraat, « Pelikaanstraat, Paradijsstraat, Immerseelstraat, and many other streets and alleyways, until at last, plagued by a headache and my uneasy thoughts, I took refuge in the zoo by the Astridplein, next to the Centraal Station, waiting for the pain to subside."'
     },
     {
-        location: [-73.95936,40.80610],
-        content: '15 years ago, you could see over the trees'
+        location: [4.424105, 51.223583],
+        content: ' "I still remember the uncertainty of my footsteps as I walked all round the inner city, down Jeruzalemstraat, Nachtegaalstraat, « Pelikaanstraat, Paradijsstraat, Immerseelstraat, and many other streets and alleyways, until at last, plagued by a headache and my uneasy thoughts, I took refuge in the zoo by the Astridplein, next to the Centraal Station, waiting for the pain to subside."'
     },
     {
-        location: [-73.96204,40.80994],
-        content: 'This was once tennis courts'
+        location: [4.420393, 51.215343 ],
+        content: '"I still remember the uncertainty of my footsteps as I walked all round the inner city, down Jeruzalemstraat, Nachtegaalstraat, « Pelikaanstraat, Paradijsstraat, Immerseelstraat, and many other streets and alleyways, until at last, plagued by a headache and my uneasy thoughts, I took refuge in the zoo by the Astridplein, next to the Centraal Station, waiting for the pain to subside."'
     },
+    { 
+    	location: [4.412467, 51.221987 ],
+        content: ' "I still remember the uncertainty of my footsteps as I walked all round the inner city, down Jeruzalemstraat, Nachtegaalstraat, « Pelikaanstraat, Paradijsstraat, Immerseelstraat, and many other streets and alleyways, until at last, plagued by a headache and my uneasy thoughts, I took refuge in the zoo by the Astridplein, next to the Centraal Station, waiting for the pain to subside."'
+    },
+    { 
+    	location: [4.423290, 51.211777 ],
+        content: ' "I still remember the uncertainty of my footsteps as I walked all round the inner city, down Jeruzalemstraat, Nachtegaalstraat, « Pelikaanstraat, Paradijsstraat, Immerseelstraat, and many other streets and alleyways, until at last, plagued by a headache and my uneasy thoughts, I took refuge in the zoo by the Astridplein, next to the Centraal Station, waiting for the pain to subside."'
+    },
+
+    { 
+    	location: [4.423539,51.216370 ],
+        content: ' "I cannot now recall exactly what creatures I saw on that visit to the Antwerp Nocturama, but there were probably bats and jerboas from Egypt and the Gobi Desert, native European hedgehogs and owls, Australian opossums, pine martens, dormice, and lemurs, leaping from branch to branch, darting back and forth over the grayish-yellow sandy ground, or disappearing into a bamboo thicket. The only animal which has remained lingering in my memory is the raccoon. I watched it for a long time as it sat beside a little stream with a serious expression on its face, washing the same piece of apple over and over again, as if it hoped that all this washing, which went far beyond any reasonable thoroughness, would help it to escape the unreal world in which it had arrived" <br /> <img src="https://desanciensetdesmodernes.files.wordpress.com/2011/02/scan0003.jpg" /> '
+       },
     ]
-    data.forEach(function(d) {
+
+      data.forEach(function(d) {
 
     let marker = new mapboxgl.Marker()    
     marker.setLngLat(d.location)
@@ -84,4 +90,3 @@ let data = [
     marker.setPopup(popup)
 
 })
-
